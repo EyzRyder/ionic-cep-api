@@ -1,20 +1,31 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<div id="container">
+
+<form [formGroup]="formulario" (submit)="enviarForm()" novalidate>
+  <ion-item>
+    <ion-label>CEP</ion-label>
+    <ion-input type="text" formControlName="cep" pattern="[0-9]*" minlength="8" maxlength="8"></ion-input>
+  </ion-item>
+  <ion-button type="submit" [disabled]="!formulario.valid">Submit</ion-button>
+</form>
+
+<ion-card *ngIf="dados">
+  <ion-card-header>
+    <ion-card-title> <strong> {{dados.uf}} </strong> </ion-card-title>
+  </ion-card-header>
+  <ion-item>
+    <ion-item>
+     {{dados.localidade}} - {{dados.uf}} <br>
+     Bairro: {{dados.bairro}} <br>
+     Rua: {{dados.logradouro}} <br>
+     DDD: {{dados.ddd}}
+    </ion-item>
+  </ion-item>
+</ion-card>
+
+</div>
+
+
 </ion-content>
