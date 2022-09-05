@@ -1,0 +1,7 @@
+{
+  "name": "Ionic Cep Api",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
