@@ -22,6 +22,11 @@
 #container a {
   text-decoration: none;
 }
+
+ion-card{
+  margin: 5%;
+}
+
 .listTitle{
   display: flex;
     flex-direction: column;
@@ -31,10 +36,11 @@
 }
 
 .dadosTitle{
-  width: 15%;
+  // width: 20%;
+  padding-right: 5%;
   color: #bd07ec;
 }
 
 .dadosContent{
-  width: 85%;
+  // width: 80%;
 }
