@@ -15,9 +15,12 @@ export class HomePage {
   cep: any;
   dados: any;
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router) {
-
-     this.formulario = this.formBuilder.group({
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: HttpClient,
+    private router: Router)
+  {
+    this.formulario = this.formBuilder.group({
     cep: ['', [Validators.required,Validators.nullValidator]],
   });
 
