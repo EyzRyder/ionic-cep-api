@@ -6,9 +6,9 @@
 <form [formGroup]="formulario" (submit)="enviarForm()" novalidate>
   <ion-item>
     <ion-label>CEP</ion-label>
-    <ion-input type="text" formControlName="cep" pattern="[0-9]*" minlength="8" maxlength="8"></ion-input>
+    <ion-input type="text" formControlName="cep" pattern="[0-9]*" minlength="8" maxlength="8" clearInput value="Limpar"></ion-input>
   </ion-item>
-  <ion-button type="submit" [disabled]="!formulario.valid">Submit</ion-button>
+  <ion-button type="submit" [disabled]="!formulario.valid">Buscar</ion-button>
 </form>
 
 <ion-card *ngIf="dados">
