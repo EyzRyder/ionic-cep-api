@@ -27,22 +27,24 @@
       <ion-list>
 
         <ion-item>
-          <ion-label>{{dados.localidade}} - {{dados.uf}} </ion-label>
+          <ion-label class="listTitle">
+            {{dados.localidade}} - {{dados.uf}} 
+          </ion-label>
         </ion-item>
 
         <ion-item>
-          <ion-label>Bairro:</ion-label>
-          <ion-label>{{dados.bairro}}</ion-label>
+          <label class="dadosTitle">Bairro:</label>
+          <label class="dadosContent">{{dados.bairro}}</label>
         </ion-item>
 
         <ion-item>
-          <ion-label>Rua:</ion-label>
-          <ion-label>{{dados.logradouro}}</ion-label>
+          <label class="dadosTitle">Rua:</label>
+          <label class="dadosContent">{{dados.logradouro}}</label>
         </ion-item>
 
         <ion-item>
-          <ion-label>DDD:</ion-label>
-          <ion-label>{{dados.ddd}}</ion-label>
+          <label class="dadosTitle">DDD:</label>
+          <label class="dadosContent">{{dados.ddd}}</label>
         </ion-item>
 
       </ion-list>
