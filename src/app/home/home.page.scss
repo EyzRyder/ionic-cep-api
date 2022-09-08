@@ -51,3 +51,19 @@ ion-card{
   float: right;
   // width: 80%;
 }
+
+.title{
+  margin-top: 4.6875em;
+  margin-right: 1.875em;
+  margin-left: 1.875em;
+  display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+ion-searchbar{
+  border-radius: 2.25em;
+}
