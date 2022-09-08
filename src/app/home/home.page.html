@@ -12,7 +12,7 @@
         </form>
     </div>
   <div id="container">
-    <ion-card *ngIf="dados">
+    <ion-card *ngIf="dados" color="primary">
       <ion-card-header>
         <ion-card-title>
           <strong>
@@ -21,25 +21,25 @@
         </ion-card-title>
       </ion-card-header>
 
-      <ion-list>
+      <ion-list style="background-color: #782EB2;" color="primary">
 
-        <ion-item>
+        <ion-item color="primary">
           <ion-label class="listTitle">
             {{dados.localidade}} - {{dados.uf}} 
           </ion-label>
         </ion-item>
 
-        <ion-item>
+        <ion-item color="primary">
           <label class="dadosTitle">Bairro:</label>
           <label class="dadosContent">{{dados.bairro}}</label>
         </ion-item>
 
-        <ion-item>
+        <ion-item color="primary">
           <label class="dadosTitle">Rua:</label>
           <label class="dadosContent">{{dados.logradouro}}</label>
         </ion-item>
 
-        <ion-item>
+        <ion-item color="primary">
           <label class="dadosTitle">DDD:</label>
           <label class="dadosContent">{{dados.ddd}}</label>
         </ion-item>
