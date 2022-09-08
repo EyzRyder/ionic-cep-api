@@ -1,20 +1,17 @@
-<ion-content class="bg">
+<ion-content class="bg" >
     <!-- pesquisar a rua e mostrar seu cep  -->
     <div class="title">
     <img src="../../assets/TIMES L O C A T O N.png" alt="">
-    <ion-searchbar showCancelButton="focus"></ion-searchbar> 
+        <form [formGroup]="formulario" (submit)="enviarForm()" novalidate>
+          <ion-item style="border-radius: 36px;">
+            <ion-label>CEP</ion-label>
+            <ion-input type="text" formControlName="cep" pattern="[0-9]*" minlength="8" maxlength="8" clearInput value="Limpar">
+            </ion-input>
+          </ion-item>
+          <ion-button type="submit" [disabled]="!formulario.valid">Buscar</ion-button>
+        </form>
     </div>
   <div id="container">
-
-    <form [formGroup]="formulario" (submit)="enviarForm()" novalidate>
-      <ion-item>
-        <ion-label>CEP</ion-label>
-        <ion-input type="text" formControlName="cep" pattern="[0-9]*" minlength="8" maxlength="8" clearInput
-          value="Limpar"></ion-input>
-      </ion-item>
-      <ion-button type="submit" [disabled]="!formulario.valid">Buscar</ion-button>
-    </form>
-
     <ion-card *ngIf="dados">
       <ion-card-header>
         <ion-card-title>
@@ -56,4 +53,4 @@
 
     </ion-card>
   </div>
-</ion-content>
+</ion-content>  

@@ -1,8 +1,11 @@
 ion-content.bg{
-  --background: url('../../assets/background.svg'),#1E1E1E;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  --background: linear-gradient(180deg, #4B0081 0%, rgba(75, 0, 129, 0.13) 100%), #1E1E1E;
+  box-shadow: inset 0px -3px 40px 3px rgba(255, 255, 255, 0.25);
+}
+
+ion-card{
+  border-radius: 36px;
+  background-color: #4B0081;
 }
 
 #container {
