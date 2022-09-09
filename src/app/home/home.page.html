@@ -2,7 +2,7 @@
     <!-- pesquisar a rua e mostrar seu cep  -->
     <div class="title">
     <img src="../../assets/TIMES L O C A T O N.png" alt="">
-        <form [formGroup]="formulario" (submit)="enviarForm()" novalidate>
+        <form style="margin-top: 5%;" [formGroup]="formulario" (submit)="enviarForm()" novalidate>
           <ion-item style="border-radius: 36px;">
             <ion-label>CEP</ion-label>
             <ion-input type="text" formControlName="cep" pattern="[0-9]*" minlength="8" maxlength="8" clearInput value="Limpar">
