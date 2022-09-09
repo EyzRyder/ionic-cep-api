@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'Ionic Cep Api',
+  appId: 'ionic.times.location',
+  appName: 'Times Location',
   webDir: 'www',
   bundledWebRuntime: false
 };

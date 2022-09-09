@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Times Location</string>
+    <string name="title_activity_main">Times Location</string>
+    <string name="package_name">ionic.times.location</string>
+    <string name="custom_url_scheme">ionic.times.location</string>
+</resources>
