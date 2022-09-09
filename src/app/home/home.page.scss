@@ -1,9 +1,9 @@
-ion-content.bg{
+ion-content.bg {
   --background: linear-gradient(180deg, #4B0081 0%, rgba(75, 0, 129, 0.13) 100%), #1E1E1E;
   box-shadow: inset 0px -3px 40px 3px rgba(255, 255, 255, 0.25);
 }
 
-ion-card{
+ion-card {
   border-radius: 36px;
 
 }
@@ -22,6 +22,7 @@ ion-card{
   font-size: 20px;
   line-height: 26px;
 }
+
 #container p {
   font-size: 16px;
   line-height: 22px;
@@ -33,47 +34,48 @@ ion-card{
   text-decoration: none;
 }
 
-ion-card{
+ion-card {
   margin: 5%;
 }
 
-.listTitle{
+.listTitle {
   display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
-ion-button{
-      display: grid;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        justify-items: center;
-            margin-top:6%;
+ion-button {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-items: center;
+  margin-top: 6%;
 }
 
-.dadosTitle{
+.dadosTitle {
   // width: 20%;
   font-weight: 700;
   padding-right: 5%;
-  color: #e982e3;;
+  color: #e982e3;
+  ;
 }
 
-.dadosContent{
+.dadosContent {
   float: right;
   // width: 80%;
 }
 
-.title{
+.title {
   margin-top: 4.6875em;
   margin-right: 1.875em;
   margin-left: 1.875em;
   display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }

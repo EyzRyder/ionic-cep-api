@@ -1,16 +1,17 @@
-<ion-content class="bg" >
-    <!-- pesquisar a rua e mostrar seu cep  -->
-    <div class="title">
+<ion-content class="bg">
+  <!-- pesquisar a rua e mostrar seu cep  -->
+  <div class="title">
     <img src="../../assets/TIMES L O C A T O N.png" alt="">
-        <form style="margin-top: 5%;" [formGroup]="formulario" (submit)="enviarForm()" novalidate>
-          <ion-item style="border-radius: 36px;">
-            <ion-label>CEP</ion-label>
-            <ion-input type="text" formControlName="cep" pattern="[0-9]*" minlength="8" maxlength="8" clearInput value="Limpar">
-            </ion-input>
-          </ion-item>
-          <ion-button type="submit" [disabled]="!formulario.valid">Buscar</ion-button>
-        </form>
-    </div>
+    <form style="margin-top: 5%;" [formGroup]="formulario" (submit)="enviarForm()" novalidate>
+      <ion-item style="border-radius: 36px;">
+        <ion-label>CEP</ion-label>
+        <ion-input type="text" formControlName="cep" pattern="[0-9]*" minlength="8" maxlength="8" clearInput
+          value="Limpar">
+        </ion-input>
+      </ion-item>
+      <ion-button type="submit" [disabled]="!formulario.valid">Buscar</ion-button>
+    </form>
+  </div>
   <div id="container">
     <ion-card *ngIf="dados" color="primary">
       <ion-card-header>
@@ -25,7 +26,7 @@
 
         <ion-item color="primary">
           <ion-label class="listTitle">
-            {{dados.localidade}} - {{dados.uf}} 
+            {{dados.localidade}} - {{dados.uf}}
           </ion-label>
         </ion-item>
 
@@ -45,12 +46,12 @@
         </ion-item>
 
       </ion-list>
-  
-    <!-- aqui teria google maps -->
-    <!-- <ion-card-content>
+
+      <!-- aqui teria google maps -->
+      <!-- <ion-card-content>
   <img src="https://www.google.com/maps/d/thumbnail?mid=1UzkBDpL5ImQhSz4eTBd0I-DhqLY&hl=en" alt="mapa"/>
   </ion-card-content>  -->
 
     </ion-card>
   </div>
-</ion-content>  
+</ion-content>
