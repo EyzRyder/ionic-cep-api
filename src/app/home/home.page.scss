@@ -79,3 +79,19 @@ ion-button {
   justify-content: center;
   align-items: center;
 }
+
+.mapa{
+transform: translateY(65%);
+height: 65vh;
+width: 100%;
+border-style: hidden;
+box-shadow: 50px;
+}
+
+capacitor-google-map {
+  display:inline-block;
+  width: 100%;
+  height: 100%;
+  border-style: hidden;
+
+}
