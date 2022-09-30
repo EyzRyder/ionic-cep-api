@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { GoogleMap, Marker } from '@capacitor/google-maps';
-import { ModalController } from '@ionic/angular';
+import { AlertController, ModalController } from '@ionic/angular';
 import { environment } from 'src/environments/environment';
 import { ModalPage } from '../modal/modal.page';
 
@@ -15,9 +15,7 @@ export class HomePage {
 
   private formulario: FormGroup;
 
-  dados: any;
-  data: any;
-  cep: any;
+
 
   @ViewChild('map')mapRef: ElementRef;
   map: GoogleMap;
@@ -26,28 +24,31 @@ export class HomePage {
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private modalCtrl: ModalController,
+    private alertController: AlertController,
     )
   {
     this.formulario = this.formBuilder.group({
     cep: ['', [Validators.required,Validators.nullValidator]],
   });
-
   }
 
+  dados: any;
+  getMap: any;
 
   async enviarForm(){
-  this.cep = this.formulario.value.cep;
-  this.http.get(`https://viacep.com.br/ws/${this.cep}/json/`).subscribe(res=>{this.dados=res});
+
+  this.dados = await this.http.get(`https://viacep.com.br/ws/${this.formulario.value.cep}/json/`).toPromise();
+  //console.log(this.dados);
   this.createMap();
 }
 
   //ionViewDidEnter(){}
-  
+
   async createMap() {
-  this.http.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.cep}&key=${environment.mapsKey}`).subscribe(res=>this.data=res);
-  if(this.data){
-  const lat = this.data.results[0].geometry.location.lat;
-  const lng = this.data.results[0].geometry.location.lng;
+  this.getMap = await this.http.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.formulario.value.cep}&key=${environment.mapsKey}`).toPromise();
+  //console.log(this.getMap.results[0]);
+  const lat = this.getMap.results[0].geometry.location.lat;
+  const lng = this.getMap.results[0].geometry.location.lng;
     this.map = await GoogleMap.create({
       id: 'my-map',
       apiKey: environment.mapsKey,
@@ -58,11 +59,10 @@ export class HomePage {
         lat: lat,
         lng: lng,
       },
-      zoom: 15,
+      zoom: 16,
       },
     })
     await this.addMarkers();
-  }
   }
 
   async addMarkers(){
@@ -85,8 +85,6 @@ export class HomePage {
       },
     ];
 
-    const result = await this.map.addMarkers(markers);
-    
 
     this.map.setOnMarkerClickListener(async (marker) => {
       const modal = await this.modalCtrl.create({
@@ -100,6 +98,10 @@ export class HomePage {
       modal.present();
     })
 
+  }
+
+  async locate(){
+    await this.map.enableCurrentLocation(true);
   }
 
 }

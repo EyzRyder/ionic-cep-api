@@ -1,4 +1,5 @@
-package io.ionic.starter;
+package ionic.times.location;
+import android.os.Bundle; // required for onCreate parameter
 import com.hemangkumar.capacitorgooglemaps.CapacitorGoogleMaps;
 
 import com.getcapacitor.BridgeActivity;
