@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;500;600;700&display=swap');
+
+* {
+  font-family: 'Signika Negative', sans-serif;
+}
+
 body {
   background: linear-gradient(180deg,#4B0081  0%, rgba(75, 0, 129, 0.13) 100%), #1E1E1E;
   box-shadow: inset 0px 0px 15px 1px rgb(214, 132, 255);
@@ -116,4 +122,12 @@ ion-content {
 
 ion-input{
   --ion-background: #8146ad;
+}
+
+.descubraCEP{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.0rem;
+  margin-top: 2%;
 }

@@ -2,9 +2,10 @@ import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { GoogleMap, Marker } from '@capacitor/google-maps';
-import { AlertController, ModalController } from '@ionic/angular';
+import { AlertController, ModalController, ToastController } from '@ionic/angular';
 import { environment } from 'src/environments/environment';
 import { ModalPage } from '../modal/modal.page';
+
 
 @Component({
   selector: 'app-home',
@@ -14,11 +15,10 @@ import { ModalPage } from '../modal/modal.page';
 export class HomePage {
 
   private formulario: FormGroup;
-
-
-
   @ViewChild('map')mapRef: ElementRef;
   map: GoogleMap;
+  dados: any;
+  getMap: any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -32,16 +32,12 @@ export class HomePage {
   });
   }
 
-  dados: any;
-  getMap: any;
-
   async enviarForm(){
 
   this.dados = await this.http.get(`https://viacep.com.br/ws/${this.formulario.value.cep}/json/`).toPromise();
   //console.log(this.dados);
   this.createMap();
 }
-
   //ionViewDidEnter(){}
 
   async createMap() {

@@ -14,6 +14,10 @@ const routes: Routes = [
     path: 'modal',
     loadChildren: () => import('./modal/modal.module').then( m => m.ModalPageModule)
   },
+  {
+    path: 'descubra-cep',
+    loadChildren: () => import('./descubra-cep/descubra-cep.module').then( m => m.DescubraCEPPageModule)
+  },
 
 ];
 

@@ -12,6 +12,9 @@
         <ion-input type="text" formControlName="cep" pattern="[0-9]*" minlength="8" maxlength="8"></ion-input>
         <ion-button slot="end" name="star" type="submit" (click)="createMap()" [disabled]="!formulario.valid">Buscar <ion-icon slot="end" name="search"></ion-icon> </ion-button>
       </ion-item>
+      <div class="descubraCEP">
+      <ion-label>Não sabe seu CEP? <a href="javascript:;" [routerLink]="['/descubra-cep']"> Clique aqui pra descobrir</a></ion-label>
+      </div>
     </form>
   </div>
 
