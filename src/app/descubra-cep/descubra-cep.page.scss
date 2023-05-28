@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: 'Signika Negative', sans-serif;
+}
+
+.container {
+    background: linear-gradient(180deg, #4B0081 0%, rgba(75, 0, 129, 0.13) 100%), #1E1E1E;
+    box-shadow: inset 0px 0px 15px 1px rgb(214, 132, 255);
+}
+
+.card {
+    border-radius: 24px;
+    margin: 1%;
+    width: 100%;
+background-color: rgb(177 92 239 / 28%);
+    margin-bottom: 15px;
+    box-shadow: inset 0px 0px 15px 1px rgb(43 18 56 / 40%);
+}
+
+.form{
+    background: #1c072bab;
+}
+
+ion-list{
+    background: none !important;
+}
+.itens{
+    background: transparent !important;
+}

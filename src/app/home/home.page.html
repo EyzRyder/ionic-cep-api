@@ -1,31 +1,33 @@
-<ion-content class="bg">
+<body>
+<ion-content [fullsreen]="true">
+
   <!-- pesquisar a rua e mostrar seu cep  -->
   <div class="title">
+
     <img src="../../assets/TIMES L O C A T O N.png" alt="">
+
     <form style="margin-top: 5%;" [formGroup]="formulario" (submit)="enviarForm()" novalidate>
       <ion-item style="border-radius: 36px;">
-        <ion-label>CEP</ion-label>
-        <ion-input type="text" formControlName="cep" pattern="[0-9]*" minlength="8" maxlength="8" clearInput
-          value="Limpar">
-        </ion-input>
+        <ion-label>CEP:</ion-label>
+        <ion-input type="text" formControlName="cep" pattern="[0-9]*" minlength="8" maxlength="8"></ion-input>
+        <ion-button slot="end" name="star" type="submit" (click)="createMap()" [disabled]="!formulario.valid">Buscar <ion-icon slot="end" name="search"></ion-icon> </ion-button>
       </ion-item>
-      <ion-button type="submit" [disabled]="!formulario.valid">Buscar</ion-button>
+      <div class="descubraCEP">
+      <ion-label>Não sabe seu CEP? <a href="javascript:;" [routerLink]="['/descubra-cep']"> Clique aqui pra descobrir</a></ion-label>
+      </div>
     </form>
   </div>
+
+
   <div id="container">
     <ion-card *ngIf="dados" color="primary">
-      <ion-card-header>
-        <ion-card-title>
-          <strong>
-            {{dados.uf}}
-          </strong>
-        </ion-card-title>
-      </ion-card-header>
 
       <ion-list style="background-color: #782EB2;" color="primary">
 
         <ion-item color="primary">
           <ion-label class="listTitle">
+            <strong>{{dados.uf}}</strong>
+            <br>
             {{dados.localidade}} - {{dados.uf}}
           </ion-label>
         </ion-item>
@@ -47,11 +49,13 @@
 
       </ion-list>
 
-      <!-- aqui teria google maps -->
-      <!-- <ion-card-content>
-  <img src="https://www.google.com/maps/d/thumbnail?mid=1UzkBDpL5ImQhSz4eTBd0I-DhqLY&hl=en" alt="mapa"/>
-  </ion-card-content>  -->
-
     </ion-card>
+
   </div>
+
+  <div *ngIf="getMap" class="mapa">
+  <capacitor-google-map #map></capacitor-google-map>
+  <ion-button expand="block" (click)="locate()">Localize-se</ion-button>
+  </div>
+
 </ion-content>

@@ -32,11 +32,20 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"></meta-data>
+                android:value="AIzaSyByv9YO_uhcx13O4TJye95s93kA4JLN2Ws"
+                android:resource="@xml/file_paths">
+            </meta-data>
         </provider>
+
+      <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyA30Fu0dksSKybQz4UM4vlCxOtotNb7hQs"/>
+
     </application>
 
     <!-- Permissions -->
 
-    <uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-feature android:name="android.hardware.location.gps" />
+
 </manifest>

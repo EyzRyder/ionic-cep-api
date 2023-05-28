@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" defaultHref="login">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Consulta logradouros</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="container">
+
+<form [formGroup]="formCEP" (submit)="pesquisarCEP()" class="form">
+  <ion-item color="transparent">
+    <ion-label position="floating">Estado (2 dígitos)</ion-label>
+    <ion-input formControlName="estado" [(ngModel)]="estado"></ion-input> 
+        <!-- <ng-container *ngFor="let erro of mensagens.erroEstado">
+          <span SPAN style="color: Red;font-size: smaller"
+            *ngIf="formCadastro.get('txtEstado').hasError(erro.tipo) && (formCadastro.get('txtEstado').dirty || formCadastro.get('txtEstado').touched)">
+            {{erro.mensagem}}
+          </span> -->
+  </ion-item>
+
+  <ion-item color="transparent">
+      <ion-label position="floating">Cidade (pelo menos 3 dígitos)</ion-label>
+      <ion-input formControlName="cidade" ></ion-input> <!-- [(ngModel)]="cidade" -->
+  </ion-item>
+    
+  <ion-item color="transparent">
+    <ion-label position="floating"> Nome da Rua (pelo menos 3 dígitos) </ion-label>
+    <ion-input formControlName="rua"></ion-input> <!-- [(ngModel)]="rua" -->
+  </ion-item> 
+  
+  <ion-button expand="block" type="submit" [disabled]="!formCEP.valid">Consultar</ion-button>
+</form>
+
+<ion-list color="none" *ngIf="cep">
+  <ion-item class="itens" color="none" lines="none" *ngFor="let cep of cep">
+    <ion-card class="card">
+      <ion-card-header>
+        <ion-card-title>{{cep.logradouro}}</ion-card-title>
+        <ion-card-subtitle>{{cep.cep}}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        Bairro: {{cep.bairro}}<br>
+        Cidade: {{cep.localidade}}<br>
+        Estado: {{cep.uf}}<br>
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+</ion-list>
+</ion-content>
